@@ -6,7 +6,7 @@
 
 /* SECAO APRESENTACAO */
 .secao-apresentacao{
-    background-image: url(assets/background-test3.jpg);
+    background-color: #f5f5f5;
     background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
@@ -31,17 +31,19 @@
 
     padding: 20px 40px;
     background-color: #fff;
-    opacity: 0.7;
+   
     border-radius: 45px;
     
 }
 .limita-secao:hover{
-    opacity: 1;;
+    opacity: 100;
 }
-.secao-apresentacao img{
-    width: 300px;
-    height: 300px;
-    border-radius: 100%;
+.secao-apresentacao img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 h1{
     font-size: 25px;
@@ -60,11 +62,14 @@ h3{
     font-style: italic;
     padding-bottom: 10px;
 }
-.container-apresentacao p:first-of-type{
-    font-size: 70px;
+.container-apresentacao p:first-of-type {
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
 }
-.container-apresentacao p:nth-of-type(2){
-    font-size: 20px;
+.container-apresentacao p:nth-of-type(2) {
+    font-size: 18px;
+    color: #555;
 }
 .botoes{
     margin-top: 20px;
@@ -122,7 +127,6 @@ button:hover{
 }
 .container-projetos::before{
     content: "";
-    back
 }
 a{
     text-decoration: none;
@@ -148,7 +152,7 @@ a{
 }
 .card img:hover{
     background-color: black;
-    transform: scale(1.5);
+    transform: scale(1.1);
 
 }
 .card h3{

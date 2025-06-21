@@ -15,7 +15,8 @@
         }
 
         body {
-            background-color: #ffffff;
+            background-color: #f0f4f8;
+            /* fundo mais claro e profissional */
             color: #111;
             line-height: 1.6;
             min-height: 100vh;
@@ -26,7 +27,6 @@
         header {
             padding: 1rem 2rem;
             background-color: #000000;
-            border-bottom: 1px solid #ccc;
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -53,53 +53,74 @@
             flex-grow: 1;
         }
 
+        .titulo-principal {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            color: #0e4c45;
+            font-weight: 700;
+        }
+
+        section {
+            margin-bottom: 6rem;
+            /* ou mais, se preferir */
+            padding-bottom: 1rem;
+        }
+
+        section+section {
+            border-top: 1px solid #eee;
+            padding-top: 3rem;
+        }
+
         section h2 {
             font-size: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             color: #16746c;
-            text-align: center;
+            text-align: left;
+            border-left: 6px solid #16746c;
+            padding-left: 1rem;
         }
 
         .cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            /* Força 3 colunas iguais */
+            /* força 3 por linha */
             gap: 2rem;
         }
 
         .card {
-            background-color: #f5f5f5;
-            border-radius: 10px;
+            background-color: #ffffff;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 22px rgba(0, 0, 0, 0.15);
         }
 
         .card img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
-            border-bottom: 1px solid #ddd;
+            object-position: top;
         }
 
         .card-content {
             padding: 1rem;
-            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            flex-grow: 1;
         }
 
         .card-content h3 {
             font-size: 1.3rem;
-            margin-bottom: 0.5rem;
             color: #111;
+            margin-bottom: 0.5rem;
         }
 
         .card-content p {
@@ -112,7 +133,22 @@
             font-size: 0.9rem;
             color: #16746c;
             font-weight: 600;
-            margin-top: auto;
+        }
+
+        .btn {
+            margin-top: 1rem;
+            align-self: flex-start;
+            background-color: #16746c;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0e4c45;
         }
 
         footer {
@@ -124,15 +160,17 @@
             margin-top: auto;
         }
 
-        /* Responsivo - menos de 600px */
-        @media (max-width: 600px) {
-            header {
-                justify-content: center;
+        @media (max-width: 768px) {
+            .titulo-principal {
+                font-size: 2.2rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
             }
 
             .cards {
-                grid-template-columns: 1fr 1fr;
-                gap: 1.5rem;
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -140,28 +178,135 @@
 
 <body>
     <header>
-        <a href="sobre.html">Sobre Mim</a>
+        <a href="index.html">Sobre Mim</a>
     </header>
 
     <main>
-        <section id="portfolio">
-            <h2>Portfólio</h2>
+        <h1 class="titulo-principal">MEUS PROJETOS</h1>
+
+        <section id="projetos-academicos">
+            <h2>Projetos Acadêmicos</h2>
             <div class="cards">
+                <div class="card">
+                    <img src="assets/DSM-1.png" alt="Projeto Site de Metodologia Scrum">
+                    <div class="card-content">
+                        <h3>Site de Metodologia Scrum - 1º Semestre </h3>
+                        <p>Com o intuito de desenvolver uma aplicação Web usando metodologias ágeis a FATEC DE JACAREÍ
+                            propôs aos alunos do 1° semestre do curso de Desenvolvimento de Software Multiplataforma
+                            (DSM), o desenvolvimento de um curso online sobre o metodo ágil Scrum, que define-se como um
+                            framework de colaboração de equipe ágil comumente usado.</p>
+                        <h4>Tecnologias:</h4>
+                        <p class="tecnologias">HTML, CSS, JavaScript, PostgreSQL</p>
+                        <a href="https://github.com/TechWizards-Tech/DSM-1" class="btn">Ver Projeto</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="assets/DSM-2.png" alt="Projeto Contador de Calorias">
+                    <div class="card-content">
+                        <h3>Contador de Calorias - 2º Semestre </h3>
+                        <p>O projeto da FATEC Jacareí propõe desenvolver uma aplicação web para contador calórico com
+                            sugestões de dietas personalizadas, usando metodologias ágeis (Scrum). A interface será
+                            feita com React, TypeScript, HTML5, CSS3 e design no Figma. Dados serão armazenados em
+                            PostgreSQL, com controle via Git/GitHub. A aplicação visa monitorar calorias e recomendar
+                            dietas conforme as necessidades dos usuários.
+
+                        </p>
+                        <h4>Tecnologias:</h4>
+                        <p class="tecnologias">HTML, CSS, JavaScript, React, PostgreSQL</p>
+                        <a href="https://github.com/TechWizards-Tech/DSM-2" class="btn">Ver Projeto</a>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <img src="assets/DSM-3.png" alt="Projeto Estação Meteorológica">
+                    <div class="card-content">
+                        <h3>Estação Meteorológica - 3º Semestre </h3>
+                        <p>Desenvolver uma plataforma web para mostrar dados meteorológicos de três estações no Lago de
+                            Furnas, com gráficos, tabelas, comparação, download em CSV e alertas para navegantes,
+                            visando segurança e fácil acesso à informação.</p>
+                        <h4>Tecnologias:</h4>
+                        <p class="tecnologias">HTML, CSS, JavaScript, React, Next, Tailwind, Vue</p>
+                        <a href="https://github.com/TechWizards-Tech/HALF-TECH---DSM-3" class="btn">Ver Projeto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos-pessoais">
+            <h2>Projetos Pessoais</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="assets/sorveteria.png" alt="Projeto Sorveteria">
+                    <div class="card-content">
+                        <h3>Sorveteria</h3>
+                        <p>Este é um projeto de uma Single Page Application (SPA) desenvolvida com React e Next.js,
+                            representando o site de uma sorveteria (fictícia).</p>
+                        <h4>Tecnologias:</h4>
+                        <p class="tecnologias">React, JavaScript, Next.js</p>
+                        <a href="https://github.com/Pollymeowth/Projeto-Sorveteria" class="btn">Ver Projeto</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="assets/agencia.png" alt="Projeto Agencia de Design Digital">
+                    <div class="card-content">
+                        <h3>Agência de Design Digital</h3>
+                        <p>Este é um projeto de uma Single Page Application (SPA) desenvolvida com React e Next.js,
+                            representando o site de uma agência de design digital (fictícia). O projeto inclui a
+                            funcionalidade de
+                            tema escuro.</p>
+                        <h4>Tecnologias:</h4>
+                        <p class="tecnologias">React, JavaScript, Next.js</p>
+                        <a href="https://github.com/Pollymeowth/agencia-design-digital" class="btn">Ver Projeto</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="assets/otica.png" alt="Projeto Ótica Vida">
+                    <div class="card-content">
+                        <h3>Ótica Vida</h3>
+                        <p>Este é um projeto de uma Single Page Application (SPA) desenvolvida com React e Next.js,
+                            representando o site de uma ótica (fictícia).</p>
+                        <h4>Tecnologias:</h4>
+                        <p class="tecnologias">React, JavaScript, Next.js</p>
+                        <a href="https://github.com/Pollymeowth/Projeto-Otica-Vida" class="btn">Ver Projeto</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="assets/barbearia.png" alt="Projeto Barbearia">
+                    <div class="card-content">
+                        <h3>Landing Page Barbearia</h3>
+                        <p>Este projeto é uma landing page para uma barbearia (fictícia), desenvolvida com React e
+                            utilizando o
+                            hook useState para gerenciar o estado da aplicação (MODO ESCURO).</p>
+                        <h4>Tecnologias:</h4>
+                        <p class="tecnologias">React, JavaScript, Next.js</p>
+                        <a href="https://github.com/Pollymeowth/Projeto-Barbearia" class="btn">Ver Projeto</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="assets/Clinica Medica.png" alt="Projeto Clinica Medica">
+                    <div class="card-content">
+                        <h3>Clinica Médica</h3>
+                        <p>Site desenvolvido para uma Clínica Médica (fictícia)</p>
+                        <h4>Tecnologias:</h4>
+                        <p class="tecnologias">React, JavaScript, Next.js</p>
+                        <a href="https://github.com/Pollymeowth/Clinica-Medica" class="btn">Ver Projeto</a>
+                    </div>
+                </div>
+
                 <div class="card">
                     <img src="assets/POUSADA-SECRETA-HOME.png" alt="Projeto Pousada Secreta">
                     <div class="card-content">
                         <h3>Pousada Secreta</h3>
                         <p>Website institucional de uma pousada fictícia.</p>
+                        <h4>Tecnologias:</h4>
                         <p class="tecnologias">HTML, CSS</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="assets/Link-Bio.png" alt="Projeto Link Bio">
-                    <div class="card-content">
-                        <h3>Link Bio Neymar (modelo)</h3>
-                        <p>Projeto estilo Linktree para centralizar redes sociais.</p>
-                        <p class="tecnologias">HTML, CSS</p>
+                        <a href="https://github.com/Pollymeowth/Pousada" class="btn">Ver Projeto</a>
                     </div>
                 </div>
 
@@ -169,17 +314,10 @@
                     <img src="assets/Provedor Hospedagem HOME.png" alt="Projeto Provedor de Hospedagem">
                     <div class="card-content">
                         <h3>Provedor de Hospedagem</h3>
-                        <p>Landing page para empresa de hospedagem.</p>
+                        <p>Modelo de Landing page para empresa de hospedagem.</p>
+                        <h4>Tecnologias:</h4>
                         <p class="tecnologias">HTML, CSS</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="assets/site-paraty.png" alt="Projeto Paraty">
-                    <div class="card-content">
-                        <h3>Site Paraty</h3>
-                        <p>Turismo e informações culturais sobre Paraty.</p>
-                        <p class="tecnologias">HTML, CSS</p>
+                        <a href="https://github.com/Pollymeowth/Website-Provedor-Hospedagem" class="btn">Ver Projeto</a>
                     </div>
                 </div>
 
@@ -187,20 +325,27 @@
                     <img src="assets/MANHATTAN-COFFEE-HOUSE.png" alt="Projeto Cafeteria">
                     <div class="card-content">
                         <h3>Cafeteria</h3>
-                        <p>Landing page para cafeteria urbana.</p>
+                        <p>Landing page para cafeteria urbana (fictícia).</p>
+                        <h4>Tecnologias:</h4>
                         <p class="tecnologias">HTML, CSS</p>
+                        <a href="https://github.com/Pollymeowth/Cafeteria" class="btn">Ver Projeto</a>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img src="assets/imobiliaria.png" alt="Projeto Imobiliária">
+                    <img src="assets/unity.png" alt="Unity Essentials">
                     <div class="card-content">
-                        <h3>Imobiliária</h3>
-                        <p>Site para uma empresa de imóveis fictícia.</p>
-                        <p class="tecnologias">HTML, CSS, JS</p>
+                        <h3>Modulo Unity Essentials</h3>
+                        <p>Aplicação feita como parte do aprendizado do Módulo de Unity Essentials disponibilizado pela Unity Learn.</p>
+                        <h4>Tecnologias:</h4>
+                        <p class="tecnologias">C#, Unity</p>
+                        <a href="https://github.com/Pollymeowth/Unity-Essentials" class="btn">Ver Projeto</a>
                     </div>
                 </div>
-            </div>
+
+        </section>
+
+        </div>
         </section>
     </main>
 
